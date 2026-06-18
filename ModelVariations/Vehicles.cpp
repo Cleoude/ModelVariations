@@ -167,7 +167,7 @@ bool isVehicleVisible(CVehicle* veh)
         return false;
 
     const CBox& box = colModel->m_boundBox;
-    CMatrix* mat = veh->GetMatrix();
+    CMatrix* mat = &veh->GetMatrix();
     if (mat == NULL)
         return false;
 
