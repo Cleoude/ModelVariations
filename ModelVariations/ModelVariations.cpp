@@ -1177,3 +1177,11 @@ public:
         hookCall(0x53C6DB, ReInitGameObjectVariablesHooked<0x53C6DB>, "CGame::ReInitGameObjectVariables"); //CGame::InitialiseWhenRestarting
     }
 } modelVariations;
+
+extern "C" __declspec(dllexport) void ReloadFromCleo()
+{
+    clearEverything();
+    loadIniData();
+    *reinterpret_cast<uint64_t*>(currentZone) = 0;
+    updateVariations();
+}
